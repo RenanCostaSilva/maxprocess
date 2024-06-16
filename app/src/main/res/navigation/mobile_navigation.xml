@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_cadastro">
+
+    <fragment
+        android:id="@+id/navigation_cadastro"
+        android:name="br.com.renancsdev.maxprocessagenda.ui.cadastrar.CadastroFragment"
+        android:label="@string/title_cadastro"
+        tools:layout="@layout/fragment_cadastro" />
+
+    <fragment
+        android:id="@+id/navigation_listar"
+        android:name="br.com.renancsdev.maxprocessagenda.ui.listar.ListarFragment"
+        android:label="@string/title_listar"
+        tools:layout="@layout/fragment_listar" />
+
+    <fragment
+        android:id="@+id/navigation_alterar"
+        android:name="br.com.renancsdev.maxprocessagenda.ui.alterar.AlterarFragment"
+        android:label="@string/title_alterar"
+        tools:layout="@layout/fragment_alterar" />
+
+    <fragment
+        android:id="@+id/navigation_excluir"
+        android:name="br.com.renancsdev.maxprocessagenda.ui.excluir.ExcluirFragment"
+        android:label="@string/title_excluir"
+        tools:layout="@layout/fragment_excluir" />
+
+</navigation>

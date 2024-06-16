@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_cadastro"
+        android:icon="@drawable/ic_create_black"
+        android:title="@string/title_cadastro" />
+
+    <item
+        android:id="@+id/navigation_listar"
+        android:icon="@drawable/ic_list_black"
+        android:title="@string/title_listar" />
+
+    <item
+        android:id="@+id/navigation_alterar"
+        android:icon="@drawable/ic_update_black"
+        android:title="@string/title_alterar" />
+
+    <item
+        android:id="@+id/navigation_excluir"
+        android:icon="@drawable/ic_delete_black"
+        android:title="@string/title_excluir" />
+
+</menu>

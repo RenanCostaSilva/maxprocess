@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModelCadastro"
+         type="br.com.renancsdev.maxprocessagenda.ui.cadastrar.CadastroViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        tools:context=".ui.cadastrar.CadastroFragment">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_cadastro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Cadastro"
+                    android:textColor="@color/secundary"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="Digite um nome: Ex Fulano da Silva"
+                    android:inputType="text"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.nome}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <EditText
+                    android:id="@+id/edit_cpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="Digite um cpf: Ex 999.999.999-99"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.cpf}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_nome" />
+
+                <EditText
+                    android:id="@+id/edit_data_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="01/01/2024 12:30:30"
+                    android:inputType="datetime"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.dataCadastro}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_cpf" />
+
+                <EditText
+                    android:id="@+id/edit_data_nascimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="Ex: 08/05/1997"
+                    android:inputType="date"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.dataNascimento}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/edit_data_cadastro"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_data_cadastro" />
+
+                <EditText
+                    android:id="@+id/edit_telefone_celular"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="Ex: (31) 99999-9999"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.telefoneCelular}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_data_nascimento" />
+
+                <EditText
+                    android:id="@+id/edit_telefone_fixo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/textfield_rouded"
+                    android:ems="10"
+                    android:hint="Ex: (31) 3456-7890"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="16dp"
+                    android:text="@{viewModelCadastro.telefoneFixo}"
+                    android:textColorHint="@color/secundary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/edit_telefone_celular"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_telefone_celular" />
+
+                <Spinner
+                    android:id="@+id/spin_regiao"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/spinner_background"
+                    android:entries="@{viewModelCadastro.spinnerItems}"
+                    android:onItemSelected="@{(parent, view, position, id) -> viewModelCadastro.onItemSelected(position)}"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/edit_telefone_fixo"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_telefone_fixo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_cadastro"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="68dp"
+            android:backgroundTint="@color/green"
+            android:text="CADASTRAR"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
