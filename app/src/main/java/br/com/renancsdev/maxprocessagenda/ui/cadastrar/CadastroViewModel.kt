@@ -74,10 +74,12 @@ class CadastroViewModel(application: Application) : AndroidViewModel(application
                         appli.mensagemToast("Cliente já cadastrado !")
                     }
                 } else {
-                    repository.inserir(criarCliente())
-                    withContext(Main) {
-                        appli.mensagemToast("Cliente cadastrado com sucesso !")
-                        limparDados()
+                    if(!vericarRegistroParaMGSeEhMenorIdade()){
+                        repository.inserir(criarCliente())
+                        withContext(Main) {
+                            appli.mensagemToast("Cliente cadastrado com sucesso !")
+                            limparDados()
+                        }
                     }
 
                 }
@@ -110,10 +112,17 @@ class CadastroViewModel(application: Application) : AndroidViewModel(application
         return formatter.format(calendar.time)
     }
 
-    fun vericarRegistroParaMGSeEhMenorIdade() {
-        if (dataNascimento.value != "" && dataNascimento.value!!.seMenordeIdade()){
-            dataNascimento.value = ""
-            appli.mensagemToast("Menores de idade não podem ser cadastrados !")
+    fun vericarRegistroParaMGSeEhMenorIdade(): Boolean {
+      return  if (dataNascimento.value != ""){
+                if(!dataNascimento.value!!.seMenordeIdade()){
+                    dataNascimento.value = ""
+                    appli.mensagemToast("Menores de idade não podem ser cadastrados !")
+                    true
+                }else{
+                   false
+                }
+        } else{
+            false
         }
     }
 
